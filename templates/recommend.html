@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  {% if t=='s' %}
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <h3 style="color:rgb(0, 0, 0)">Sorry! This movie is not available.</h3>
+  </div>
+
+  {% else %}
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <h3 style="color:rgb(0, 0, 0)">Recommendation based on {{movie}}</h3>
+  </div>
+
+    <ul class="list-group list-group-flush">
+      {% for m in r %}
+        <li class="list-group-item" style="color:rgb(0, 0, 0)"><strong>{{m|capitalize}}</strong></li>
+        <br >
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+{% endblock %}
